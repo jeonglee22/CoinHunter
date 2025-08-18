@@ -23,6 +23,13 @@ public class PlayerController : MonoBehaviour
         }
 
         rb.linearVelocity = velocity * speed;
+    }
 
+    public void Die()
+    {
+        gameObject.SetActive(false);
+
+        var go = GameObject.FindWithTag("GameController");
+        go.GetComponent<GameManager>().GameOver();
     }
 }

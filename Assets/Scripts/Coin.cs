@@ -14,7 +14,8 @@ public class Coin : MonoBehaviour
         {
             gameObject.SetActive(false);
 
-
+            var go = GameObject.FindWithTag("GameController");
+            go.GetComponent<GameManager>().AddCoin();
         }
 	}
 }

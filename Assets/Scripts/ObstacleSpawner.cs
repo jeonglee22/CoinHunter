@@ -27,8 +27,9 @@ public class ObstacleSpawner : MonoBehaviour
         if (spawnTime > spawnInterval)
         {
 			float posX = Random.Range(spawnRangeMin, spawnRangeMax);
+			float posZ = Random.Range(spawnRangeMin, spawnRangeMax);
 
-			Vector3 spawnPos = new Vector3(posX, 1f, 15f);
+			Vector3 spawnPos = new Vector3(posX, 10f, posZ);
 
             Instantiate(obstacle, spawnPos, Quaternion.identity);
 

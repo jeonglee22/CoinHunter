@@ -13,11 +13,20 @@ public class FallingObstacle : MonoBehaviour
 	// Update is called once per frame
 	void Update()
     {
-        rb.linearVelocity = Vector3.back * fallingSpeed;
+        rb.linearVelocity = Vector3.down * fallingSpeed;
 
-        if(transform.position.z < -15f)
+        if(transform.position.y < 0f)
         {
             Destroy(gameObject);
         }
     }
+
+	private void OnTriggerEnter(Collider other)
+	{
+		if(other.CompareTag("Player"))
+		{
+			var playerController = other.GetComponent<PlayerController>();
+			playerController.Die();
+		}
+	}
 }
