@@ -22,6 +22,10 @@ public class CoinSpawner : MonoBehaviour
 
 	private void Update()
 	{
+		var go = GameObject.FindWithTag("GameController");
+		if (go.GetComponent<GameManager>().IsGameOver())
+			return;
+
 		spawnTime += Time.deltaTime;
 		if(spawnTime > spawnInterval)
 		{
