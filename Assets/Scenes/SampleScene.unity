@@ -263,8 +263,8 @@ Camera:
   m_GameObject: {fileID: 330585543}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -798,6 +798,53 @@ MonoBehaviour:
   coin: {fileID: 4068766717668866098, guid: 9076a1605af60ae49b6a10b9ebcdd8f0, type: 3}
   spawnTimeMax: 3
   spawnTimeMin: 2.5
+--- !u!1 &1679935208
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1679935209}
+  - component: {fileID: 1679935210}
+  m_Layer: 0
+  m_Name: ObstacleSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1679935209
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1679935208}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1679935210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1679935208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e301a3481ba70b347acd80609105f304, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnTimeMax: 1
+  spawnTimeMin: 0.5
+  obstacle: {fileID: 2514786213538879209, guid: fd652f3b5b9371b459576838af1b0919, type: 3}
 --- !u!1 &1707485130
 GameObject:
   m_ObjectHideFlags: 0
@@ -1212,3 +1259,4 @@ SceneRoots:
   - {fileID: 2102310653}
   - {fileID: 1526512928}
   - {fileID: 1844685193}
+  - {fileID: 1679935209}
