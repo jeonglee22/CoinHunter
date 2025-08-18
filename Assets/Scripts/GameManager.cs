@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
 			score.text = $"Score : {currentScore}";
 		}
 		else
-		{ 
+		{
 			float best = PlayerPrefs.GetFloat("BestScore", 0f);
 			if(currentScore > best)
 			{
@@ -47,9 +47,8 @@ public class GameManager : MonoBehaviour
 			{
 				SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 				PlayerPrefs.SetFloat("BestScore", best);
+				Time.timeScale = 1f;
 			}
-
-			
 		}
 	}
 
@@ -63,6 +62,7 @@ public class GameManager : MonoBehaviour
 	{
 		isGameOver = true;
 		gameOver.SetActive(true);
+		Time.timeScale = 0f;
 	}
 
 	public bool IsGameOver()

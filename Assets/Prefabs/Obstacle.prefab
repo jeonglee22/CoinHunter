@@ -124,7 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fallingSpeed: 10
   fallingRoll: 5
-  bounce: 200
+  bounce: 500
 --- !u!54 &1490635891586676634
 Rigidbody:
   m_ObjectHideFlags: 0
