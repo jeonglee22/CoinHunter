@@ -8,11 +8,17 @@ public class CoinSpawner : MonoBehaviour
 
 	public GameObject coin;
 
-	public float spawnTimeMax = 1f;
-	public float spawnTimeMin = 0.5f;
+	public float spawnTimeMax = 3f;
+	public float spawnTimeMin = 2.5f;
 
 	private float spawnInterval;
 	private float spawnTime;
+
+	private void Start()
+	{
+		spawnTime = 0f;
+		spawnInterval = Random.Range(spawnTimeMin, spawnTimeMax);
+	}
 
 	private void Update()
 	{
@@ -23,9 +29,10 @@ public class CoinSpawner : MonoBehaviour
 			float posZ = Random.Range(spawnRangeMin, spawnRangeMax);
 			Vector3 localPos = new Vector3(posX, 0, posZ);
 			Vector3 spawnPos = transform.position + localPos;
-			Instantiate(coin);
+			Instantiate(coin, spawnPos, Quaternion.identity);
 
 			spawnTime = 0f;
+			spawnInterval = Random.Range(spawnTimeMin, spawnTimeMax);
 		}
 	}
 }
