@@ -15,11 +15,15 @@ public class GameManager : MonoBehaviour
 	public TextMeshProUGUI bestScore;
 	private float currentScore;
 
+	public GameObject gameResume;
+
 	private bool isGameOver = false;
+	private bool isGameResume = false;
 
 	private void Start()
 	{
 		gameOver.SetActive(false);
+		gameResume.SetActive(false);
 
 		currentCoin = 0;
 		surviveTime = 0f;
@@ -29,6 +33,13 @@ public class GameManager : MonoBehaviour
 	{
 		if (!isGameOver)
 		{
+			if(Input.GetKeyDown(KeyCode.Escape))
+			{
+				Time.timeScale = 1f - Time.timeScale;
+				isGameResume = !isGameResume;
+				gameResume.SetActive(isGameResume);
+			}
+
 			surviveTime += Time.deltaTime;
 			time.text = $"Time : {Mathf.FloorToInt(surviveTime)}";
 			currentScore = Mathf.FloorToInt(surviveTime) + currentCoin * 10;
