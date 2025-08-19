@@ -1708,8 +1708,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e301a3481ba70b347acd80609105f304, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnTimeMax: 1
-  spawnTimeMin: 0.5
+  spawnTimeMax: 1.5
+  spawnTimeMin: 1
   obstacle: {fileID: 2514786213538879209, guid: fd652f3b5b9371b459576838af1b0919, type: 3}
 --- !u!1 &1707485130
 GameObject:

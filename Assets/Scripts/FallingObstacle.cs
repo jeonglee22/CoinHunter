@@ -8,6 +8,10 @@ public class FallingObstacle : MonoBehaviour
 
     private Rigidbody rb;
 
+	private int explosion = 5;
+
+	private bool isDrop = true;
+
 	private void Start()
 	{
 		rb = GetComponent<Rigidbody>();
@@ -27,9 +31,16 @@ public class FallingObstacle : MonoBehaviour
 
 	private void OnCollisionEnter(Collision collision)
 	{
-		if (collision.collider.CompareTag("Plane"))
+		if (collision.collider.CompareTag("Plane") && isDrop)
 		{
 			rb.AddForce(Vector3.up * bounce);
+			for(int i = 0; i < explosion; i++)
+			{
+				var obj = Instantiate(rb);
+				obj.gameObject.GetComponent<FallingObstacle>().isDrop = false;
+				Destroy(obj, 3f);
+			}
+			isDrop = false;
 		}
 		if (collision.collider.CompareTag("Player"))
 		{
